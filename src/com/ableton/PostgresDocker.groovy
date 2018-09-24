@@ -21,6 +21,10 @@ class PostgresDocker implements Serializable {
    */
   String postgresUser = 'jenkins'
   /**
+   * Password to use for POSTGRES_PASSWORD.
+   */
+  String postgresPassword = 'jenkins'
+  /**
    * UID to use when for the Docker user mapping. If null, then the current user will be
    * automatically determined using a shell call to <pre>id -u</pre>.
    */
@@ -73,6 +77,7 @@ class PostgresDocker implements Serializable {
           FROM postgres:${version}
           RUN useradd --uid ${uid} --user-group ${postgresUser}
           ENV POSTGRES_USER=${postgresUser}
+          ENV POSTGRES_PASSWORD=${postgresPassword}
           ENV POSTGRES_DB=${dbName}
           USER ${postgresUser}
           EXPOSE 5432
