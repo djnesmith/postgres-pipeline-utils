@@ -21,7 +21,7 @@ class PostgresDocker implements Serializable {
   /**
    * Username to use for POSTGRES_USER.
    */
-  String postgresUser = 'jenkins'
+  String postgresUser = 'postgres'
   /**
    * UID to use when for the Docker user mapping. If null, then the current user will be
    * automatically determined using a shell call to <pre>id -u</pre>.
