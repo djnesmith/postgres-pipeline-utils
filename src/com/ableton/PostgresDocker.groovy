@@ -77,7 +77,7 @@ class PostgresDocker implements Serializable {
         file: 'Dockerfile',
         text: """
           FROM postgres:${version}
-          
+          ENV POSTGRES_PASS=testpass
           ENV POSTGRES_USER=${postgresUser}
           ENV POSTGRES_DB=${dbName}
           ENV POSTGRES_HOST_AUTH_METHOD=trust
